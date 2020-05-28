@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/conversion_currency_cli.rb'
+
+Pry.start
