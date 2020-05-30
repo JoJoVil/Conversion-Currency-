@@ -23,14 +23,20 @@ class Cli
             puts "Conversion Currency rates are based on 1 US Dollar."
             puts "To get conversion rate, type 'enter'."
             puts "To quit, type 'exit'."
-            input = gets.strip
+            input = gets.strip.downcase
+
+            if input = "enter"
+                enter
+            else
+                puts "Type 'enter' to get conversion rate"
+            end
             end
     
         end
 
     def enter
         puts "Here is a list of all the Currency Codes of different countries."
-        ConversionRate.all.each.with_index(1) do |conrate.code, index|
+        ConversionRate.all.each.with_index(1) do |conrate, index|
         puts "#{index}. #{conrate.code}" 
         end
         puts "Please enter number of Currency Code for exchange rate."
