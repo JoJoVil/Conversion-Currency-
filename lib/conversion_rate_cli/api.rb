@@ -7,10 +7,11 @@ puts "Api class loaded"
     def self.get_conversion_rate
         res = RestClient.get(BASE_URL)
         data = JSON.parse(res.body)
-        data['results'].each do |x, y|
-            puts 'Country #{x} = #{y}'
+        # binding.pry
+        data["rates"].each do |k, v|
+           ConversionRate.new(k, v)
+        
         end
     end
 
-
-end 
+end
