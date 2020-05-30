@@ -12,7 +12,7 @@ class Cli
     end
 
     def print_all
-       ConversionRate.all.each.with_index(1) {|conrate| puts "#{conrate.country} = #{conrate.rate}" } 
+       ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.country} = #{conrate.rate}" } 
     end
 
     def welcome
