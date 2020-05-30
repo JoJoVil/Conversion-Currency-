@@ -12,12 +12,22 @@ class Cli
     end
 
     def print_all
-       ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.country} = #{conrate.rate}" } 
+       ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.code} = #{conrate.rate}" } 
     end
 
     def welcome
-        puts "Welcome to Conversion Currency CLI!"
-    end
+        input = " "
+        while input != "exit"
 
+            puts "Welcome to Conversion Currency CLI! 
+            puts "Conversion rates are based on 1 US Dollar."
+            puts "To get conversion rate, type 'enter'.
+            puts "To quit, type 'exit'."
+    
+            input = gets.strip
+    
+        end
 
+def enter
+    
 end 

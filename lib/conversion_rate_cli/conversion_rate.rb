@@ -1,10 +1,10 @@
 class ConversionRate
- attr_accessor :country, :rate 
+ attr_accessor :code, :rate 
 
  @@all = []
 
- def initialize(country, rate)
-    @country = country
+ def initialize(code, rate)
+    @code = code
     @rate = rate
 
     @@all << self
