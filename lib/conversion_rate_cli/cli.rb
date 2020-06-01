@@ -1,22 +1,23 @@
 class Cli
 
+    # def run
+    #     welcome
+    #     Api.get_conversion_rate
+    #     main
+    # end
+
+
+    # def main
+    #     print_all
+    # end
+
+    # def print_all
+    #    ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.code} = #{conrate.rate}" } 
+    # end
+
     def run
-        welcome
-        Api.get_conversion_rate
-        main
-    end
-
-
-    def main
-        print_all
-    end
-
-    def print_all
-       ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.code} = #{conrate.rate}" } 
-    end
-
-    def welcome
         input = " "
+        Api.get_conversion_rate
         while input != "exit"
 
             puts "Welcome to Conversion Currency CLI!" 
@@ -27,28 +28,31 @@ class Cli
 
             if input = "enter"
                 enter
-            else
-                puts "Type 'enter' to get conversion rate"
+            #   else
+                
+        
+            # #     puts "Type 'enter' to get conversion rate"
             end
-            end
-    
         end
+    
+    end
 
     def enter
         puts "Here is a list of all the Currency Codes of different countries."
-        ConversionRate.all.each.with_index(1) do |conrate, index|
+        ConversionRate.all.each.with_index(1) do |conrate, index|   
         puts "#{index}. #{conrate.code}" 
+        
         end
         puts "Please enter number of Currency Code for exchange rate."
         input = gets.strip.to_i
             if input >= 1 && input <= ConversionRate.all.length
-            code = ConversionRate.all[input-1]
+            conrate = ConversionRate.all[input-1]
             puts "#{conrate.code} = #{conrate.rate}"
             else
             puts "Please choose a valid number." 
             enter
-        end
+            end
         
     end
 
-end 
+end
