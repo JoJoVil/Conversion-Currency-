@@ -1,20 +1,5 @@
 class Cli
 
-    # def run
-    #     welcome
-    #     Api.get_conversion_rate
-    #     main
-    # end
-
-
-    # def main
-    #     print_all
-    # end
-
-    # def print_all
-    #    ConversionRate.all.each.with_index(1) {|conrate, index| puts "#{index}.#{conrate.code} = #{conrate.rate}" } 
-    # end
-
     def run
         input = " "
         Api.get_conversion_rate
@@ -26,12 +11,14 @@ class Cli
             puts "To quit, type 'exit'."
             input = gets.strip.downcase
 
-            if input = "enter"
+            if input == "enter"
                 enter
-            #   else
-                
-        
-            # #     puts "Type 'enter' to get conversion rate"
+              else
+                puts "Please choose a valid number." 
+                enter
+                puts "Good Bye"
+                exit
+              end
             end
         end
     
@@ -48,11 +35,10 @@ class Cli
             if input >= 1 && input <= ConversionRate.all.length
             conrate = ConversionRate.all[input-1]
             puts "#{conrate.code} = #{conrate.rate}"
-            else
-            puts "Please choose a valid number." 
-            enter
-            end
-        
-    end
-
+            # else
+            # puts "Please choose a valid number." 
+            # enter
+        end
 end
+   
+
