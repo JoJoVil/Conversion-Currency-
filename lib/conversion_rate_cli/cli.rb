@@ -6,23 +6,35 @@ class Cli
         puts "Welcome to Conversion Currency CLI!" 
         while input != "exit"
             puts "Conversion Currency rates are based on 1 US Dollar."
+            puts " "
             puts "To get conversion rate, type 'enter'."
             puts "To quit, type 'exit'."
             input = gets.strip.downcase
 
             if input == "enter"
                 enter
-            else
-                sleep 0.5
+            elsif input == "exit"
+                 puts "Good bye and thank you for using Conversion Currency"
+
+            elsif input != "enter" && input != "exit"
+                #  sleep 0.5
                 puts "Please choose a valid input." 
+                puts " "
+                
+               
+            # else
+            #     sleep 0.5
+            #     puts "Please choose a valid input." 
+            #     # puts "Good bye and thank you for using Conversion Currency"
+            #     # exit
             end
         end
-        puts "Good Bye"
-        exit
+        
     end
 
     def enter
         puts "Here is a list of all the Currency Codes of different countries."
+        puts " "
         ConversionRate.all.each.with_index(1) do |conrate, index|   
             puts "#{index}. #{conrate.code}" 
         end
@@ -44,7 +56,12 @@ class Cli
         puts "exit or continue?"
         input = gets.chomp.downcase
         if input == "exit"
+            puts "Good bye and thank you for using Conversion Currency"
             exit
+        elsif input == 'continue'
+            enter
+        else
+            exit?
         end
     end
 end
