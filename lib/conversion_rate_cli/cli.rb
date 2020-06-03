@@ -17,16 +17,8 @@ class Cli
                  puts "Good bye and thank you for using Conversion Currency"
 
             elsif input != "enter" && input != "exit"
-                #  sleep 0.5
                 puts "Please choose a valid input." 
                 puts " "
-                
-               
-            # else
-            #     sleep 0.5
-            #     puts "Please choose a valid input." 
-            #     # puts "Good bye and thank you for using Conversion Currency"
-            #     # exit
             end
         end
         
