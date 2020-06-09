@@ -11,15 +11,25 @@ class Cli
             puts "To quit, type 'exit'."
             input = gets.strip.downcase
 
-            if input == "enter"
+            case input
+            when "enter"
                 enter
-            elsif input == "exit"
-                 puts "Good bye and thank you for using Conversion Currency"
-
-            elsif input != "enter" && input != "exit"
+            when "exit" 
+                exit
+                puts "Good bye and thank you for using Conversion Currency"
+            when input != "enter" && input != "exit" 
                 puts "Please choose a valid input." 
-                puts " "
-            end
+            end    
+
+            # if input == "enter"
+            #     enter
+            # elsif input == "exit"
+            #      puts "Good bye and thank you for using Conversion Currency"
+
+            # elsif input != "enter" && input != "exit"
+            #     puts "Please choose a valid input." 
+            #     puts " "
+            # end
         end
         
     end
@@ -50,6 +60,8 @@ class Cli
         if input == "exit"
             puts "Good bye and thank you for using Conversion Currency"
             exit
+        elsif input != "exit"  || "continue"
+            puts "Please choose a valid number." 
         elsif input == 'continue'
             enter
         else
@@ -58,4 +70,3 @@ class Cli
     end
 end
    
-
