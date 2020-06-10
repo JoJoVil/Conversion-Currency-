@@ -8,8 +8,8 @@ puts "Api class loaded"
         res = RestClient.get(BASE_URL)
         data = JSON.parse(res.body)
         # binding.pry
-        data["rates"].each do |k, v|
-           ConversionRate.new(k, v)
+        data["rates"].each do |code, rate|
+           ConversionRate.new(code, rate)
         
         end
     end
